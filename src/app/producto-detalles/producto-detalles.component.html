@@ -1,0 +1,21 @@
+<div class="class panel panel-default" *ngIf="producto">
+  <div class="row main">
+    <div class="col-lg-4 col-md-4 col-sm-4">
+      <h2>{{producto.nombre}}</h2>
+    </div>
+  </div>
+  <hr>
+  <div class="row main">
+    <div class="col-lg-3 col-md-3 col-sm-12">
+      <a class="thumbnail">
+        <img src="./../../assets/{{producto.imagen}}" alt="{{producto.nombre}}">
+      </a>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-12">
+      <h5>Precio: {{producto.precio | currency}}</h5>
+      <h6>Unidades disponibles: {{producto.unidadesDisponibles}}</h6>
+    </div>
+  </div>
+  <a [routerLink]="['../../catalogo']" class="btn btn-primary" role="button">Atrás</a>
+  <hr>
+</div>

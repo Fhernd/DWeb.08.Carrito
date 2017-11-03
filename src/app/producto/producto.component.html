@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-sm-12 col-md-12">
+    <div class="thumbnail">
+      <img src="../../assets/{{producto.imagen}}" alt="{{producto.nombre}}">
+      <div class="caption">
+        <h4>{{producto.nombre}}</h4>
+        <p>Precio: <span>{{producto.precio | currency}}</span></p>
+        <p>Unidades disponibles: <span>{{producto.unidadesDisponibles}}</span></p>
+        <p><a [routerLink]="['../producto-detalle', producto.id]" class="btn btn-primary" role="button">Ver más</a>
+        <a class="btn btn-warning" role="button" (click)="agregarProducto(cantidad.value)">Añadir</a></p>
+        <div class="form-group form-horizontal">
+          <div class="col-md-5">
+            <input id="cantidad" name="cantidad" type="number" placeholder="" class="form-control input-md line" required="" value="1" min="1" #cantidad>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

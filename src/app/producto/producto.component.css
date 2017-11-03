@@ -1,0 +1,9 @@
+.thumbnail img { min-height:150px; height:150px; }
+
+.form-group{
+  display: inline-block !important;
+}
+
+.line{
+  float: left;
+}

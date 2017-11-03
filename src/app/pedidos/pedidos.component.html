@@ -1,0 +1,30 @@
+<div class="class panel panel-default" *ngIf="_carritoService">
+  <div class="row main">
+    <div class="col-lg-4 col-md-4 col-sm-4">
+
+    </div>
+  </div>
+  <hr>
+  <div class="row main">
+    <div class="col-lg-3 col-md-3 col-sm-12">
+      <div class="media" *ngFor="let pedido of _carritoService.pedidos">
+        <div class="media-left">
+          <a href="#">
+            <img class="media-object" src="../../assets/{{pedido.producto.imagen}}" alt="{{pedido.producto.nombre}}">
+          </a>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">{{pedido.producto.nombre}}</h4>
+          <p>Unidades: {{pedido.cantidad}}</p>
+          <p>Subtotal: {{pedido.producto.precio * pedido.cantidad | currency}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-12">
+      <h4>Total: {{calcularTotal() | currency}}</h4>
+      <a [routerLink]="['../catalogo']" class="btn btn-default" role="button">Cancelar</a>
+      <a (click)="pagar()" class="btn btn-success" role="button">Pagar</a>
+    </div>
+  </div>
+  <hr>
+</div>
